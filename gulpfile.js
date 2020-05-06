@@ -12,6 +12,9 @@ const minify = require(`gulp-csso`);
 const rename = require(`gulp-rename`);
 const imagemin = require(`gulp-imagemin`);
 const svgstore = require(`gulp-svgstore`);
+const rollup = require(`gulp-rollup`);
+const sourcemaps = require(`gulp-sourcemaps`);
+
 
 gulp.task(`style`, () => {
   return gulp.src(`sass/style.scss`).
