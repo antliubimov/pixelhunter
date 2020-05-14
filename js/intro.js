@@ -1,4 +1,5 @@
 // intro.js
+import getElementFromTemplate from "./getElementFromTemplate";
 
 const introTemplate = `<section id="intro" class="intro">
   <button class="intro__asterisk asterisk" type="button"><span class="visually-hidden">Продолжить</span>*</button>
@@ -7,3 +8,8 @@ const introTemplate = `<section id="intro" class="intro">
     <img src="img/icon-top.svg" width="71" height="79" alt="Топ игроков">
    </button>
 </section>`;
+
+const intro = getElementFromTemplate(introTemplate);
+
+export default intro;
+
