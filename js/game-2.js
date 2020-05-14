@@ -1,4 +1,5 @@
 // game-2.js
+import getElementFromTemplate from "./getElementFromTemplate";
 
 // <!-- Игровой экран с одним изображением -->
 const gameSecondTemplate = `<header class="header">
@@ -46,3 +47,7 @@ const gameSecondTemplate = `<header class="header">
       <li class="stats__result stats__result--unknown"></li>
     </ul>
   </section>`;
+
+const gameSecond = getElementFromTemplate(gameSecondTemplate);
+
+export default gameSecond;

@@ -1,5 +1,8 @@
 // rules.js
 import getElementFromTemplate from "./getElementFromTemplate";
+import changeScreen from "./changeScreen";
+import gameFirst from "./game-1";
+
 // <!-- Правила игры -->
 const rulesTemplate = `<header class="header">
     <button class="back">
@@ -30,5 +33,21 @@ const rulesTemplate = `<header class="header">
   </section>`;
 
 const rules = getElementFromTemplate(rulesTemplate);
+const rulesInput = rules.querySelector(`.rules__input`);
+const rulesButton = rules.querySelector(`.rules__button`);
+
+const hasName = () => {
+  if (rulesInput.value.trim() !== ``) {
+    rulesButton.removeAttribute(`disabled`);
+  } else {
+    rulesButton.setAttribute(`disabled`, true);
+  }
+};
+
+rulesInput.addEventListener(`keyup`, hasName);
+
+rulesButton.addEventListener(`click`, function () {
+  changeScreen(gameFirst);
+});
 
 export default rules;
