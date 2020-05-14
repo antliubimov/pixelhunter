@@ -1,6 +1,8 @@
 // greeting.js
 
 // <!-- Приветствие -->
+import getElementFromTemplate from "./getElementFromTemplate";
+
 const greetingTemplate = `<section class="greeting central--blur">
     <img class="greeting__logo" src="img/logo_ph-big.svg" width="201" height="89" alt="Pixel Hunter">
     <div class="greeting__asterisk asterisk"><span class="visually-hidden">Я просто красивая звёздочка</span>*</div>
@@ -24,3 +26,7 @@ const greetingTemplate = `<section class="greeting central--blur">
       <img src="img/icon-top.svg" width="71" height="79" alt="Топ игроков">
     </button>
   </section>`;
+
+const greeting = getElementFromTemplate(greetingTemplate);
+
+export default greeting;

@@ -1,5 +1,7 @@
 // intro.js
 import getElementFromTemplate from "./getElementFromTemplate";
+import changeScreen from "./changeScreen";
+import greeting from "./greeting";
 
 const introTemplate = `<section id="intro" class="intro">
   <button class="intro__asterisk asterisk" type="button"><span class="visually-hidden">Продолжить</span>*</button>
@@ -10,6 +12,11 @@ const introTemplate = `<section id="intro" class="intro">
 </section>`;
 
 const intro = getElementFromTemplate(introTemplate);
+const introAsterisk = intro.querySelector(`.intro__asterisk`);
+
+introAsterisk.addEventListener(`click`, function () {
+  changeScreen(greeting);
+});
 
 export default intro;
 
