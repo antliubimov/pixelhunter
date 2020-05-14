@@ -1,5 +1,5 @@
 // rules.js
-
+import getElementFromTemplate from "./getElementFromTemplate";
 // <!-- Правила игры -->
 const rulesTemplate = `<header class="header">
     <button class="back">
@@ -28,3 +28,7 @@ const rulesTemplate = `<header class="header">
       <button class="rules__button  continue" type="submit" disabled>Go!</button>
     </form>
   </section>`;
+
+const rules = getElementFromTemplate(rulesTemplate);
+
+export default rules;
