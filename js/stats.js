@@ -1,4 +1,5 @@
 // stats.js
+import getElementFromTemplate from "./getElementFromTemplate";
 
 // <!-- Общая статистика по всем игрокам -->
 const statsTemplate = `<header class="header">
@@ -285,3 +286,7 @@ const statsSingleTemplate = `<header class="header">
       </tr>
     </table>
   </section>`;
+
+const stats = getElementFromTemplate(statsTemplate);
+
+export default stats;

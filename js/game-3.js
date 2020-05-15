@@ -1,5 +1,8 @@
 // game-3.js
 import getElementFromTemplate from "./getElementFromTemplate";
+import changeScreen from "./changeScreen";
+import stats from "./stats";
+
 // <!-- Игровой экран с тремя изображениями -->
 const gameThirdTemplate = `<header class="header">
     <button class="back">
@@ -46,5 +49,12 @@ const gameThirdTemplate = `<header class="header">
   </section>`;
 
 const gameThird = getElementFromTemplate(gameThirdTemplate);
+const gameOptions = gameThird.querySelectorAll(`.game__option`);
+
+const showStats = () => {
+  changeScreen(stats);
+};
+
+[...gameOptions].forEach((option) => option.addEventListener(`click`, showStats));
 
 export default gameThird;
