@@ -2,6 +2,7 @@
 import getElementFromTemplate from "./getElementFromTemplate";
 import checkInput from "./checkInput";
 import changeScreen from "./changeScreen";
+import backToGreeting from "./backToGreeting";
 import gameSecond from "./game-2";
 
 // <!-- Игровой экран с двумя изображениями -->
@@ -73,5 +74,7 @@ const showGameSecond = () => {
 };
 
 [...gameAnswer].forEach((answer) => answer.addEventListener(`click`, showGameSecond));
+
+backToGreeting(gameFirst);
 
 export default gameFirst;

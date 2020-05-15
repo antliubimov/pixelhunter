@@ -1,6 +1,7 @@
 // game-3.js
 import getElementFromTemplate from "./getElementFromTemplate";
 import changeScreen from "./changeScreen";
+import backToGreeting from "./backToGreeting";
 import stats from "./stats";
 
 // <!-- Игровой экран с тремя изображениями -->
@@ -56,5 +57,7 @@ const showStats = () => {
 };
 
 [...gameOptions].forEach((option) => option.addEventListener(`click`, showStats));
+
+backToGreeting(gameThird);
 
 export default gameThird;

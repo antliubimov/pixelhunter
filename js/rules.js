@@ -1,6 +1,7 @@
 // rules.js
 import getElementFromTemplate from "./getElementFromTemplate";
 import changeScreen from "./changeScreen";
+import backToGreeting from "./backToGreeting";
 import gameFirst from "./game-1";
 
 // <!-- Правила игры -->
@@ -49,5 +50,7 @@ rulesInput.addEventListener(`keyup`, hasName);
 rulesButton.addEventListener(`click`, function () {
   changeScreen(gameFirst);
 });
+
+backToGreeting(rules);
 
 export default rules;
