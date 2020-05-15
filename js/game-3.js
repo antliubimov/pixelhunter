@@ -1,5 +1,5 @@
 // game-3.js
-
+import getElementFromTemplate from "./getElementFromTemplate";
 // <!-- Игровой экран с тремя изображениями -->
 const gameThirdTemplate = `<header class="header">
     <button class="back">
@@ -44,3 +44,7 @@ const gameThirdTemplate = `<header class="header">
       <li class="stats__result stats__result--unknown"></li>
     </ul>
   </section>`;
+
+const gameThird = getElementFromTemplate(gameThirdTemplate);
+
+export default gameThird;

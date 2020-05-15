@@ -1,5 +1,8 @@
 // game-2.js
 import getElementFromTemplate from "./getElementFromTemplate";
+import changeScreen from "./changeScreen";
+import checkInput from "./checkInput";
+import gameThird from "./game-3";
 
 // <!-- Игровой экран с одним изображением -->
 const gameSecondTemplate = `<header class="header">
@@ -49,5 +52,16 @@ const gameSecondTemplate = `<header class="header">
   </section>`;
 
 const gameSecond = getElementFromTemplate(gameSecondTemplate);
+
+const gameAnswer = gameSecond.querySelectorAll(`.game__answer`);
+
+const showGameThird = () => {
+  const checked = checkInput(gameSecond, 1);
+  if (checked) {
+    changeScreen(gameThird);
+  }
+};
+
+[...gameAnswer].forEach((answer) => answer.addEventListener(`click`, showGameThird));
 
 export default gameSecond;
