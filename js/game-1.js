@@ -1,5 +1,6 @@
 // game-1.js
 import getElementFromTemplate from "./getElementFromTemplate";
+import checkInput from "./checkInput";
 import changeScreen from "./changeScreen";
 import gameSecond from "./game-2";
 
@@ -64,13 +65,8 @@ const gameFirstTemplate = `<header class="header">
 const gameFirst = getElementFromTemplate(gameFirstTemplate);
 const gameAnswer = gameFirst.querySelectorAll(`.game__answer`);
 
-const checkInput = () => {
-  const inputs = gameFirst.querySelectorAll(`.game__option input:checked`);
-  return inputs.length === 2;
-};
-
 const showGameSecond = () => {
-  const checked = checkInput();
+  const checked = checkInput(gameFirst, 2);
   if (checked) {
     changeScreen(gameSecond);
   }
