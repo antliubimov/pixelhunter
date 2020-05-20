@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 const del = require(`del`);
 const gulp = require(`gulp`);
@@ -14,7 +14,8 @@ const imagemin = require(`gulp-imagemin`);
 const svgstore = require(`gulp-svgstore`);
 const rollup = require(`gulp-better-rollup`);
 const sourcemaps = require(`gulp-sourcemaps`);
-
+const mocha = require(`gulp-mocha`);
+const commonjs = require(`rollup-plugin-commonjs`);
 
 gulp.task(`style`, () => {
   return gulp.src(`sass/style.scss`).
@@ -116,4 +117,10 @@ gulp.task(`build`, [`assemble`], () => {
 });
 
 gulp.task(`test`, () => {
+  return gulp.src([`js/**/*.test.js`])
+    .pipe(rollup({
+      plugin: [commonjs()]
+    }, `cjs`))
+    .pipe(gulp.dest(`build/test`))
+    .pipe(mocha({reporter: `spec`}));
 });
